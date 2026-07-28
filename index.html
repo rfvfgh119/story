@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>六號戰情室：臺灣史時空大冒險</title>
+    <!-- 總監提醒：請將你的 GA4 追蹤代碼貼在下方 -->
+    <!-- Google tag (gtag.js) 預留區 -->
+    
+    <style>
+        :root {
+            --primary-color: #1a252f;
+            --accent-color: #e67e22;
+            --bg-color: #f4f7f6;
+            --card-bg: #ffffff;
+            --text-main: #2c3e50;
+            --text-light: #7f8c8d;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, 'LiHei Pro', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* 頂部戰情中心橫幅 */
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #2c3e50 100%);
+            color: white;
+            text-align: center;
+            padding: 3.5rem 1rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('data:image/svg+xml;utf8,<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg"><circle cx="2" cy="2" r="1" fill="rgba(255,255,255,0.05)"/></svg>');
+            pointer-events: none;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: #bdc3c7;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 2.5rem auto;
+            padding: 0 1.5rem;
+        }
+
+        /* 總監提示區塊 */
+        .intro-box {
+            background-color: #fff;
+            border-left: 6px solid var(--accent-color);
+            padding: 1.8rem;
+            border-radius: 8px;
+            margin-bottom: 3rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            font-size: 1.1rem;
+        }
+        
+        .intro-box strong {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+        }
+
+        /* 任務卡片網格 */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.8rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 4px;
+            background-color: var(--accent-color);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+        }
+
+        .card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .card-tag {
+            background-color: #fef0e6;
+            color: var(--accent-color);
+            font-size: 0.85rem;
+            font-weight: bold;
+            padding: 4px 10px;
+            border-radius: 20px;
+            align-self: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+        }
+
+        /* 單一按鈕排版 */
+        .btn-group {
+            display: flex;
+            margin-top: auto;
+        }
+
+        .btn-yt {
+            flex: 1; /* 讓按鈕填滿卡片寬度 */
+            text-align: center;
+            padding: 12px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.2s ease;
+            font-size: 1.05rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: #ffebee;
+            color: #d32f2f;
+            border: 1px solid #ffcdd2;
+        }
+
+        .btn-yt:hover {
+            background-color: #ffcdd2;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem;
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-top: 4rem;
+            background-color: #ecf0f1;
+            border-top: 1px solid #e0e6ed;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>臺灣史時空大冒險 🧭</h1>
+    <p>跟著小雪與土土，潛入歷史現場，破解高年級社會科大魔王！</p>
+</header>
+
+<div class="container">
+    <div class="intro-box">
+        <strong>💡 總監系統提示：</strong><br><br>
+        歡迎進入六號戰情室的高年級專屬先修基地！這裡收錄了臺灣歷史最關鍵的 6 大轉捩點。請戰友們每天挑選一個任務，點擊<strong>「▶️ 觀看動畫」</strong>，讓大腦浸泡在歷史的懸念中。不用死背年代，看懂因果邏輯，你就是考場上的最強特務！
+    </div>
+
+    <div class="grid">
+        <!-- 任務 1 -->
+        <div class="card">
+            <div class="card-tag">專題故事 1</div>
+            <div class="card-title">海賊王子的殞落與復仇者的逆襲</div>
+            <div class="btn-group">
+                <a href="https://www.youtube.com/watch?v=T443kK0OE68" target="_blank" class="btn-yt">▶️ 觀看動畫</a>
+            </div>
+        </div>
+
+        <!-- 任務 2 -->
+        <div class="card">
+            <div class="card-tag">專題故事 2</div>
+            <div class="card-title">課本不敢寫的臺灣史真相</div>
+            <div class="btn-group">
+                <a href="https://www.youtube.com/watch?v=y18jqyiHe_c" target="_blank" class="btn-yt">▶️ 觀看動畫</a>
+            </div>
+        </div>
+
+        <!-- 任務 3 -->
+        <div class="card">
+            <div class="card-tag">專題故事 3</div>
+            <div class="card-title">死亡率高達60%！黑水溝偷渡傳奇</div>
+            <div class="btn-group">
+                <a href="https://www.youtube.com/watch?v=3TuJqjke2Bo" target="_blank" class="btn-yt">▶️ 觀看動畫</a>
+            </div>
+        </div>
+
+        <!-- 任務 4 -->
+        <div class="card">
+            <div class="card-tag">專題故事 4</div>
+            <div class="card-title">🚨 養鴨農夫逆襲變國王？</div>
+            <div class="btn-group">
+                <a href="https://www.youtube.com/watch?v=7ksLqmMtsMA" target="_blank" class="btn-yt">▶️ 觀看動畫</a>
+            </div>
+        </div>
+
+        <!-- 任務 5 -->
+        <div class="card">
+            <div class="card-tag">專題故事 5</div>
+            <div class="card-title">看漫畫竟被關9年？唱錯歌直接帶走</div>
+            <div class="btn-group">
+                <a href="https://www.youtube.com/watch?v=nTRAcoF1o4g" target="_blank" class="btn-yt">▶️ 觀看動畫</a>
+            </div>
+        </div>
+
+        <!-- 任務 6 -->
+        <div class="card">
+            <div class="card-tag">專題故事 6</div>
+            <div class="card-title">一頓晚餐如何引發帝國大戰？</div>
+            <div class="btn-group">
+                <a href="https://www.youtube.com/watch?v=xPPvXJ6Iksg" target="_blank" class="btn-yt">▶️ 觀看動畫</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    © 2026 六號叔叔說故事. All rights reserved.<br>
+    專為國小高年級社會科打造的視覺化歷史彈藥庫。
+</footer>
+
+</body>
+</html>
