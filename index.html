@@ -149,7 +149,7 @@
         }
 
         .btn-yt {
-            flex: 1; /* 讓按鈕填滿卡片寬度 */
+            flex: 1;
             text-align: center;
             padding: 12px;
             border-radius: 8px;
@@ -170,12 +170,59 @@
             background-color: #ffcdd2;
         }
 
+        /* 贊助區塊樣式 */
+        .support-section {
+            text-align: center;
+            padding: 3.5rem 1.5rem;
+            background-color: #ffffff;
+            border-top: 3px dashed #bdc3c7;
+            margin-top: 4rem;
+        }
+        
+        .support-section h3 {
+            color: var(--primary-color);
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+        }
+        
+        .support-section p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+        
+        .qr-code {
+            max-width: 220px;
+            width: 100%;
+            height: auto;
+            margin: 0 auto 1.5rem auto;
+            border: 1px solid #e0e6ed;
+            border-radius: 12px;
+            padding: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            display: block;
+        }
+
+        .btn-support {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: background 0.3s;
+        }
+
+        .btn-support:hover {
+            background-color: #d35400;
+        }
+
         footer {
             text-align: center;
             padding: 3rem 1rem;
             color: var(--text-light);
             font-size: 0.95rem;
-            margin-top: 4rem;
             background-color: #ecf0f1;
             border-top: 1px solid #e0e6ed;
         }
@@ -191,7 +238,7 @@
 <div class="container">
     <div class="intro-box">
         <strong>💡 總監系統提示：</strong><br><br>
-        歡迎進入六號戰情室的高年級專屬先修基地！這裡收錄了臺灣歷史最關鍵的 6 大轉捩點。請戰友們每天挑選一個任務，點擊<strong>「▶️ 觀看動畫」</strong>，讓大腦浸泡在歷史的懸念中。不用死背年代，看懂因果邏輯，你就是考場上的最強特務！
+        歡迎進入六號戰情室的高年級專屬先修基地！這裡收錄了臺灣歷史最關鍵的 7 大轉捩點。請戰友們每天挑選一個任務，點擊<strong>「▶️ 觀看動畫」</strong>，讓大腦浸泡在歷史的懸念中。不用死背年代，看懂因果邏輯，你就是考場上的最強特務！
     </div>
 
     <div class="grid">
@@ -248,7 +295,27 @@
                 <a href="https://www.youtube.com/watch?v=xPPvXJ6Iksg" target="_blank" class="btn-yt">▶️ 觀看動畫</a>
             </div>
         </div>
+
+        <!-- 任務 7 -->
+        <div class="card">
+            <div class="card-tag">專題故事 7</div>
+            <div class="card-title">會吐黑煙的鐵怪獸降臨！臺灣魔法大改造</div>
+            <div class="btn-group">
+                <a href="https://youtu.be/u-4TOOW0ZJc" target="_blank" class="btn-yt">▶️ 觀看動畫</a>
+            </div>
+        </div>
     </div>
+</div>
+
+<!-- 燃料補給站 -->
+<div class="support-section">
+    <h3>☕ 給研發中心一劑續航燃料</h3>
+    <p>如果這套臺灣史專題故事成功幫孩子看懂歷史脈絡，歡迎請叔叔喝杯咖啡，支持新關卡開發！</p>
+    
+    <!-- 叔叔，這裡就是你的 QR Code 圖片位置 -->
+    <img src="請貼上你的_QR_Code_圖片網址.jpg" alt="請叔叔喝咖啡 QR Code" class="qr-code">
+    
+    <a href="https://portaly.cc/uncle6/support" target="_blank" class="btn-support">前往線上燃料補給站</a>
 </div>
 
 <footer>
